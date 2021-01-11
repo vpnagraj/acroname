@@ -4,3 +4,4 @@ Meta
 *.Rproj
 *.Rproj.user
 .Rhistory
+.Rproj.user

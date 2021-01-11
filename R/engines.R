@@ -1,29 +1,35 @@
-#' Generate acronym from input string
+#' acroname engines
+#' @name engines
+#'
+#' @description
+#'
+#' The `acroname` engines include methods to generate acronyms and initialisms. `acronym()` searches for candidates by using characters provided to construct words. Each word constructed is compared to the terms in the dictionary specified, and once a match is found the acronym is returned. `initialism()` takes the first characters from each word in the string. Both functions can optionally return a tibble, ignore articles, and/or use a "bag of words" approach (for more see \link[acroname]{mince}).
 #'
 #' @param input Character vector with text to use as the input for the candidate
 #' @param dictionary Character vector containing dictionary of terms from which acronym should be created; default is `NULL` and `hunspell` "en_us" dictionary will be used
 #' @param acronym_length Number of characters in acronym; default is `3`
 #' @param ignore_articles Boolean indicating whether or not articles should be ignored ; default is `TRUE`
-#' @param timeout Number of seconds to spend trying to search the for an acronym; default is `60`
+#' @param timeout Maximum seconds to spend searching for an acronym; default is `60`
 #' @param bow Boolean for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
 #' @param bow_prop Given `bow = TRUE` this specifies the proportion of words to sample; ignored if `bow = FALSE`; default is `0.5`
 #' @param to_tibble Boolean as to whether or not the result should be a `tibble`; default is `FALSE`
 #'
 #' @return
 #'
-#' If `to_tibble = FALSE` (default), then a character vector containing the acronym capitalized and the original string, with letters used in the acronym capitalized.
+#' If `to_tibble = FALSE` (default), then a character vector containing the name capitalized followed by the original string with letters used in the name capitalized.
 #'
 #' If `to_tibble = TRUE`, then a `tibble` with the following columns:
 #'
-#' - **formatted**: The candidate acronym and string with letters used capitalized
-#' - **prefix**: The candidate acronym
-#' - **suffix**: Words used with letters in acronym capitalized
-#' - **original**: The original string used to construct the acronym
-#'
-#' @export
+#' - **formatted**: The candidate name and string with letters used capitalized
+#' - **prefix**: The candidate name
+#' - **suffix**: Words used with letters in name capitalized
+#' - **original**: The original string used to construct the name
 #'
 #' @md
 #'
+
+#' @export
+#' @rdname engines
 acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_articles = TRUE, timeout = 60, bow = FALSE, bow_prop = 0.5, to_tibble = FALSE) {
 
   ## default behavior is to use hunspell en_us
@@ -40,7 +46,7 @@ acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_article
       tolower()
   }
 
-  tmp <- process_input(input = input, ignore_articles = ignore_articles, bow = bow, bow_prop = bow_prop)
+  tmp <- mince(input = input, ignore_articles = ignore_articles, bow = bow, bow_prop = bow_prop)
 
   ## get the index of the first character
   first_char_ind <- abs(tmp$words_len  - cumsum(tmp$words_len))  + 1
@@ -83,33 +89,12 @@ acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_article
 }
 
 
-#' Generate initialism from input string
-#'
-#' @param input Character vector with text to use as the input for the candidate
-#' @param ignore_articles Boolean indicating whether or not articles should be ignored ; default is `TRUE`
-#' @param bow Boolean for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
-#' @param bow_prop Given `bow = TRUE` this specifies the proportion of words to sample; ignored if `bow = FALSE`; default is `0.5`
-#' @param to_tibble Boolean as to whether or not the result should be a `tibble`; default is `FALSE`
-#'
-#' @return
-#' If `to_tibble = FALSE` (default), then a character vector containing the initialism capitalized and the original string, with letters used in the initialism capitalized.
-#'
-#' If `to_tibble = TRUE`, then a `tibble` with the following columns:
-#'
-#' - **formatted**: The initialism and string with letters used capitalized
-#' - **prefix**: The initialism
-#' - **suffix**: Words used with letters in initialism capitalized
-#' - **original**: The original string used to construct the initialism
-#'
 #' @export
-#'
-#' @md
-#'
-#'
+#' @rdname engines
 initialism <- function(input, ignore_articles = TRUE, bow = FALSE, bow_prop = 0.5, to_tibble = FALSE) {
 
   ## process input
-  tmp <- process_input(input = input, ignore_articles = ignore_articles, bow = bow, bow_prop = bow_prop)
+  tmp <- mince(input = input, ignore_articles = ignore_articles, bow = bow, bow_prop = bow_prop)
 
   ## get candidate prefix
   candidate <- paste0(toupper(tmp$first_chars), collapse = "")

@@ -16,4 +16,5 @@ Imports:
     dplyr,
     purrr,
     readr,
-    stringr
+    stringr,
+    hunspell
