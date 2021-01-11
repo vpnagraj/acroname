@@ -94,6 +94,7 @@ find_candidate <- function(collapsed, acronym_length, probs, dictionary, words_l
     } else {
       valid <- FALSE
       candidate <- ""
+      name <- ""
     }
   }
 

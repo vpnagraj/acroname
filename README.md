@@ -208,8 +208,7 @@ for 60 seconds by default, but this duration can be customized via the
 ## the longer the desired acronym, the longer it will likely to take to find a match
 ## setting the timeout to 2 seconds here
 acronym("latest and greatest data analysis package", dictionary = sw_names, acronym_length = 10, timeout = 2)
-#> Took too long ...
-#> Error in acronym("latest and greatest data analysis package", dictionary = sw_names, : object 'res' not found
+#> Unable to find viable acronym in 'timeout' specified (2 seconds) ...
 ```
 
 ## Related

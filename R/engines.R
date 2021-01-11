@@ -61,30 +61,31 @@ acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_article
   ## use timeout with tryCatch
   ## if the processing takes longer than timeout then a message will be printed
   tryCatch({
-     res <- R.utils::withTimeout({
-      find_candidate(collapsed = tmp$collapsed,
-                     acronym_length = acronym_length,
-                     probs = probs,
-                     dictionary = dictionary,
-                     words_len = tmp$words_len)
+     R.utils::withTimeout({
+      res <- find_candidate(collapsed = tmp$collapsed,
+                            acronym_length = acronym_length,
+                            probs = probs,
+                            dictionary = dictionary,
+                            words_len = tmp$words_len)
+
+      if(to_tibble) {
+        ## tibble from result elements
+        res_tibble <-
+          dplyr::tibble(
+            formatted = res$formatted,
+            prefix = res$prefix,
+            suffix = res$suffix,
+            original = paste0(tmp$words, collapse = " ")
+          )
+        return(res_tibble)
+      } else {
+        return(res$formatted)
+      }
+
     }, timeout = timeout)
   }, TimeoutException = function(ex) {
-    message("Took too long ...")
+    message(sprintf("Unable to find viable acronym in 'timeout' specified (%d seconds) ... ", timeout))
   })
-
-  if(to_tibble) {
-    ## tibble from result elements
-    res_tibble <-
-      dplyr::tibble(
-      formatted = res$formatted,
-      prefix = res$prefix,
-      suffix = res$suffix,
-      original = paste0(tmp$words, collapse = " ")
-    )
-    return(res_tibble)
-  } else {
-    return(res$formatted)
-  }
 
 }
 
