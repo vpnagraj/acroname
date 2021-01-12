@@ -1,11 +1,10 @@
 Package: acroname
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Engine for acronyms and initialisms
 Version: 0.1.0
 Authors@R: c(person("VP", "Nagraj", role = c("aut", "cre"), email = "nagraj@nagraj.net"))
 Maintainer: VP Nagraj <nagraj@nagraj.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: A tool for generating acronyms and initialisms from arbitrary text input.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
