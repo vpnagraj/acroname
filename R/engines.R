@@ -3,16 +3,16 @@
 #'
 #' @description
 #'
-#' The `acroname` engines include methods to generate acronyms and initialisms. `acronym()` searches for candidates by using characters provided to construct words. Each word constructed is compared to the terms in the dictionary specified, and once a match is found the acronym is returned. `initialism()` takes the first characters from each word in the string. Both functions can optionally return a tibble, ignore articles, and/or use a "bag of words" approach (for more see \link[acroname]{mince}).
+#' The `acroname` engines include methods to generate acronyms and initialisms. `acronym()` searches for candidates by constructing words from characters provided. Each word constructed is compared to the terms in the dictionary specified, and once a match is found the acronym is returned. `initialism()` takes the first characters from each word in the string. Both functions can optionally return a `tibble`, ignore articles, and/or use a "bag of words" approach (for more see \link[acroname]{mince}).
 #'
 #' @param input Character vector with text to use as the input for the candidate
 #' @param dictionary Character vector containing dictionary of terms from which acronym should be created; default is `NULL` and `hunspell` "en_us" dictionary will be used
 #' @param acronym_length Number of characters in acronym; default is `3`
-#' @param ignore_articles Boolean indicating whether or not articles should be ignored ; default is `TRUE`
+#' @param ignore_articles Logical indicating whether or not articles should be ignored ; default is `TRUE`
 #' @param timeout Maximum seconds to spend searching for an acronym; default is `60`
-#' @param bow Boolean for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
+#' @param bow Logical for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
 #' @param bow_prop Given `bow = TRUE` this specifies the proportion of words to sample; ignored if `bow = FALSE`; default is `0.5`
-#' @param to_tibble Boolean as to whether or not the result should be a `tibble`; default is `FALSE`
+#' @param to_tibble Logical as to whether or not the result should be a `tibble`; default is `FALSE`
 #'
 #' @return
 #'

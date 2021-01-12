@@ -62,7 +62,7 @@ acronym("dip him in the river who loves water", acronym_length = 4, to_tibble = 
 
 ### Exclude articles
 
-Each function can also be customized exclude articles in the input
+Each function can also be customized to exclude articles in the input
 string:
 
 ``` r
@@ -85,8 +85,8 @@ acronym("dip him in the river who loves water the fountain contains the cistern 
 #> [1] "INRI: dip loves hIm who water fouNtain River In cistern"
 ```
 
-To generate a series of randomized results, consider iterating over the
-function:
+It is possible to generate a series of randomized results by iterating
+over the function:
 
 ``` r
 library(purrr)
@@ -100,7 +100,7 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 
-## write a little function to wrap acronym() in order to map
+## write a function to wrap acronym() in order to map
 mapwrap <- function(i, input) {
   res <- 
     acronym(input = input, ignore_articles = TRUE, acronym_length =  4, bow = TRUE, bow_prop = 0.75, to_tibble = TRUE) %>%
@@ -124,13 +124,14 @@ map_df(iterations, mapwrap, "dip him in the river who loves water the fountain c
 
 By default the `acronym()` engine will search for acronyms that match
 words in the “en\_US” dictionary provided by the
-[hunspell](https://CRAN.R-project.org/package=hunspell). However, the
-dictionary of words to match can be customized via the “dictionary”
-argument. The example below uses a dictionary based on names from the
-dplyr package, prepared with a little help from the `mince()` function:
+[hunspell](https://CRAN.R-project.org/package=hunspell) package.
+However, the dictionary of words to match can be customized via the
+“dictionary” argument. The example below uses a dictionary based on
+names from the dplyr package, prepared with a little help from the
+`mince()` function:
 
 ``` r
-## get star wars names (first or last) from the dplyr::starwars data
+## get names (first or last) from the dplyr::starwars data
 ## see mince() in action
 mince(starwars$name)
 #> $words

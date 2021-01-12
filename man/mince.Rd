@@ -9,9 +9,9 @@ mince(input, ignore_articles = TRUE, bow = FALSE, bow_prop = 0.5)
 \arguments{
 \item{input}{Character vector with text to use as the input for the candidate}
 
-\item{ignore_articles}{Boolean indicating whether or not articles should be ignored ; default is \code{TRUE}}
+\item{ignore_articles}{Logical indicating whether or not articles should be ignored ; default is \code{TRUE}}
 
-\item{bow}{Boolean for whether or not a "bag of words" approach should be used for "input" vector; default is \code{FALSE}}
+\item{bow}{Logical for whether or not a "bag of words" approach should be used for "input" vector; default is \code{FALSE}}
 
 \item{bow_prop}{Given \code{bow = TRUE} this specifies the proportion of words to sample; ignored if \code{bow = FALSE}; default is \code{0.5}}
 }
@@ -20,7 +20,7 @@ Named list with the following elements:
 \itemize{
 \item \strong{words}: Vector with one element per word to be used in the acronym or initialism
 \item \strong{collapsed}: Vector of length 1 containing all characters from words collapsed
-\item \strong{words_len}: Vector containing lengths of each word
+\item \strong{words_len}: Vector containing length of each word
 \item \strong{first_chars}: Vector containing first character from each word
 }
 }

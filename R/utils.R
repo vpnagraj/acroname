@@ -121,15 +121,15 @@ find_candidate <- function(collapsed, acronym_length, probs, dictionary, words_l
 #' If the function is used with `bow = TRUE` the input will be processed with a "bag of words" approach, by which words will be shuffled and sampled without replacement. In this case, the number of characters used will be determined by the proportion passed to "bow_prop".
 #'
 #' @param input Character vector with text to use as the input for the candidate
-#' @param ignore_articles Boolean indicating whether or not articles should be ignored ; default is `TRUE`
-#' @param bow Boolean for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
+#' @param ignore_articles Logical indicating whether or not articles should be ignored ; default is `TRUE`
+#' @param bow Logical for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
 #' @param bow_prop Given `bow = TRUE` this specifies the proportion of words to sample; ignored if `bow = FALSE`; default is `0.5`
 #'
 #' @return Named list with the following elements:
 #'
 #' - **words**: Vector with one element per word to be used in the acronym or initialism
 #' - **collapsed**: Vector of length 1 containing all characters from words collapsed
-#' - **words_len**: Vector containing lengths of each word
+#' - **words_len**: Vector containing length of each word
 #' - **first_chars**: Vector containing first character from each word
 #'
 #' @md

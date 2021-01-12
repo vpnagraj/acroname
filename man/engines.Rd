@@ -32,15 +32,15 @@ initialism(
 
 \item{acronym_length}{Number of characters in acronym; default is \code{3}}
 
-\item{ignore_articles}{Boolean indicating whether or not articles should be ignored ; default is \code{TRUE}}
+\item{ignore_articles}{Logical indicating whether or not articles should be ignored ; default is \code{TRUE}}
 
 \item{timeout}{Maximum seconds to spend searching for an acronym; default is \code{60}}
 
-\item{bow}{Boolean for whether or not a "bag of words" approach should be used for "input" vector; default is \code{FALSE}}
+\item{bow}{Logical for whether or not a "bag of words" approach should be used for "input" vector; default is \code{FALSE}}
 
 \item{bow_prop}{Given \code{bow = TRUE} this specifies the proportion of words to sample; ignored if \code{bow = FALSE}; default is \code{0.5}}
 
-\item{to_tibble}{Boolean as to whether or not the result should be a \code{tibble}; default is \code{FALSE}}
+\item{to_tibble}{Logical as to whether or not the result should be a \code{tibble}; default is \code{FALSE}}
 }
 \value{
 If \code{to_tibble = FALSE} (default), then a character vector containing the name capitalized followed by the original string with letters used in the name capitalized.
@@ -54,5 +54,5 @@ If \code{to_tibble = TRUE}, then a \code{tibble} with the following columns:
 }
 }
 \description{
-The \code{acroname} engines include methods to generate acronyms and initialisms. \code{acronym()} searches for candidates by using characters provided to construct words. Each word constructed is compared to the terms in the dictionary specified, and once a match is found the acronym is returned. \code{initialism()} takes the first characters from each word in the string. Both functions can optionally return a tibble, ignore articles, and/or use a "bag of words" approach (for more see \link[acroname]{mince}).
+The \code{acroname} engines include methods to generate acronyms and initialisms. \code{acronym()} searches for candidates by constructing words from characters provided. Each word constructed is compared to the terms in the dictionary specified, and once a match is found the acronym is returned. \code{initialism()} takes the first characters from each word in the string. Both functions can optionally return a \code{tibble}, ignore articles, and/or use a "bag of words" approach (for more see \link[acroname]{mince}).
 }
