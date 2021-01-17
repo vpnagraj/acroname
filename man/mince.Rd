@@ -4,12 +4,20 @@
 \alias{mince}
 \title{Prepare input string}
 \usage{
-mince(input, ignore_articles = TRUE, bow = FALSE, bow_prop = 0.5)
+mince(
+  input,
+  ignore_articles = TRUE,
+  alnum_only = TRUE,
+  bow = FALSE,
+  bow_prop = 0.5
+)
 }
 \arguments{
 \item{input}{Character vector with text to use as the input for the candidate}
 
 \item{ignore_articles}{Logical indicating whether or not articles should be ignored ; default is \code{TRUE}}
+
+\item{alnum_only}{Logical that specifes whether only alphanumeric should be used; default is \code{TRUE}}
 
 \item{bow}{Logical for whether or not a "bag of words" approach should be used for "input" vector; default is \code{FALSE}}
 

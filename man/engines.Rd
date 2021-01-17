@@ -11,6 +11,7 @@ acronym(
   dictionary = NULL,
   acronym_length = 3,
   ignore_articles = TRUE,
+  alnum_only = TRUE,
   timeout = 60,
   bow = FALSE,
   bow_prop = 0.5,
@@ -20,6 +21,7 @@ acronym(
 initialism(
   input,
   ignore_articles = TRUE,
+  alnum_only = TRUE,
   bow = FALSE,
   bow_prop = 0.5,
   to_tibble = FALSE
@@ -33,6 +35,8 @@ initialism(
 \item{acronym_length}{Number of characters in acronym; default is \code{3}}
 
 \item{ignore_articles}{Logical indicating whether or not articles should be ignored ; default is \code{TRUE}}
+
+\item{alnum_only}{Logical that specifes whether only alphanumeric should be used; default is \code{TRUE}}
 
 \item{timeout}{Maximum seconds to spend searching for an acronym; default is \code{60}}
 

@@ -9,6 +9,7 @@
 #' @param dictionary Character vector containing dictionary of terms from which acronym should be created; default is `NULL` and `hunspell` "en_us" dictionary will be used
 #' @param acronym_length Number of characters in acronym; default is `3`
 #' @param ignore_articles Logical indicating whether or not articles should be ignored ; default is `TRUE`
+#' @param alnum_only Logical that specifes whether only alphanumeric should be used; default is `TRUE`
 #' @param timeout Maximum seconds to spend searching for an acronym; default is `60`
 #' @param bow Logical for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
 #' @param bow_prop Given `bow = TRUE` this specifies the proportion of words to sample; ignored if `bow = FALSE`; default is `0.5`
@@ -30,7 +31,7 @@
 
 #' @export
 #' @rdname engines
-acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_articles = TRUE, timeout = 60, bow = FALSE, bow_prop = 0.5, to_tibble = FALSE) {
+acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_articles = TRUE, alnum_only = TRUE, timeout = 60, bow = FALSE, bow_prop = 0.5, to_tibble = FALSE) {
 
   ## default behavior is to use hunspell en_us
   if(is.null(dictionary)) {
@@ -46,7 +47,11 @@ acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_article
       tolower()
   }
 
-  tmp <- mince(input = input, ignore_articles = ignore_articles, bow = bow, bow_prop = bow_prop)
+  tmp <- mince(input = input,
+               ignore_articles = ignore_articles,
+               alnum_only = alnum_only,
+               bow = bow,
+               bow_prop = bow_prop)
 
   ## get the index of the first character
   first_char_ind <- abs(tmp$words_len  - cumsum(tmp$words_len))  + 1
@@ -92,10 +97,14 @@ acronym <- function(input, dictionary = NULL, acronym_length = 3, ignore_article
 
 #' @export
 #' @rdname engines
-initialism <- function(input, ignore_articles = TRUE, bow = FALSE, bow_prop = 0.5, to_tibble = FALSE) {
+initialism <- function(input, ignore_articles = TRUE, alnum_only = TRUE, bow = FALSE, bow_prop = 0.5, to_tibble = FALSE) {
 
   ## process input
-  tmp <- mince(input = input, ignore_articles = ignore_articles, bow = bow, bow_prop = bow_prop)
+  tmp <- mince(input = input,
+               ignore_articles = ignore_articles,
+               alnum_only = alnum_only,
+               bow = bow,
+               bow_prop = bow_prop)
 
   ## get candidate prefix
   candidate <- paste0(toupper(tmp$first_chars), collapse = "")

@@ -122,6 +122,7 @@ find_candidate <- function(collapsed, acronym_length, probs, dictionary, words_l
 #'
 #' @param input Character vector with text to use as the input for the candidate
 #' @param ignore_articles Logical indicating whether or not articles should be ignored ; default is `TRUE`
+#' @param alnum_only Logical that specifes whether only alphanumeric should be used; default is `TRUE`
 #' @param bow Logical for whether or not a "bag of words" approach should be used for "input" vector; default is `FALSE`
 #' @param bow_prop Given `bow = TRUE` this specifies the proportion of words to sample; ignored if `bow = FALSE`; default is `0.5`
 #'
@@ -135,7 +136,7 @@ find_candidate <- function(collapsed, acronym_length, probs, dictionary, words_l
 #' @md
 #' @export
 #'
-mince <- function(input, ignore_articles = TRUE, bow = FALSE, bow_prop = 0.5) {
+mince <- function(input, ignore_articles = TRUE, alnum_only = TRUE, bow = FALSE, bow_prop = 0.5) {
 
   ## check if the input character vector is > 1
   ## if so ... collapse together prior to splitting
@@ -148,6 +149,14 @@ mince <- function(input, ignore_articles = TRUE, bow = FALSE, bow_prop = 0.5) {
   words <-
     strsplit(input, " ") %>%
     unlist(.)
+
+  ## handle alphanumeric only option
+  ## replace any non-numeric with ""
+  if(alnum_only) {
+    words <-
+      words %>%
+      stringr::str_replace_all(., "[^[:alnum:]]", "")
+  }
 
   ## use this vector of words to conditionally check for articles
   if(ignore_articles) {

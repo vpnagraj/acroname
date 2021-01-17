@@ -29,7 +29,7 @@ test_that("find_articles works as expected", {
 
 test_that("mince works as expected with defaults", {
 
-  tst <- mince("The fox condemns the trap not himself")
+  tst <- mince("the fox condemns the trap, not himself")
 
   expect_equal(tst$words, c("fox", "condemns", "trap", "not", "himself"))
   expect_equal(tst$collapsed, "foxcondemnstrapnothimself")
@@ -40,11 +40,23 @@ test_that("mince works as expected with defaults", {
 
 test_that("mince works with articles", {
 
-  tst <- mince("the fox condemns the trap not himself", ignore_articles = FALSE)
+  tst <- mince("the fox condemns the trap, not himself", ignore_articles = FALSE)
 
   expect_equal(tst$words, c("the","fox", "condemns", "the", "trap", "not", "himself"))
   expect_equal(tst$collapsed, "thefoxcondemnsthetrapnothimself")
   expect_equal(tst$words_len, c(3,3,8,3,4,3,7))
+  expect_equal(tst$first_chars, c("t","f","c","t","t","n","h"))
+
+})
+
+
+test_that("mince works with non-alphanumeric", {
+
+  tst <- mince("the fox condemns the trap, not himself", alnum_only = FALSE, ignore_articles = FALSE)
+
+  expect_equal(tst$words, c("the","fox", "condemns", "the", "trap,", "not", "himself"))
+  expect_equal(tst$collapsed, "thefoxcondemnsthetrap,nothimself")
+  expect_equal(tst$words_len, c(3,3,8,3,5,3,7))
   expect_equal(tst$first_chars, c("t","f","c","t","t","n","h"))
 
 })
