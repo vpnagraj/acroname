@@ -1,6 +1,6 @@
 Package: acroname
 Type: Package
-Title: Engine for acronyms and initialisms
+Title: Engine for Acronyms and Initialisms
 Version: 0.1.0
 Authors@R: c(person("VP", "Nagraj", role = c("aut", "cre"), email = "nagraj@nagraj.net"))
 Maintainer: VP Nagraj <nagraj@nagraj.net>
