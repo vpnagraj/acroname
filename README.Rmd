@@ -15,8 +15,8 @@ knitr::opts_chunk$set(
 
 # acroname
 
-<!-- badges: start -->
-<!-- badges: end -->
+[![CRAN Status](https://www.r-pkg.org/badges/version/acroname)](https://cran.r-project.org/package=acroname)
+![](https://cranlogs.r-pkg.org/badges/acroname)
 
 ## Installation
 
@@ -127,3 +127,7 @@ acronym("latest and greatest data analysis package", dictionary = sw_names, acro
 ## Related
 
 - https://github.com/bacook17/acronym
+
+## Contributing
+
+Please use GitHub issues to report bugs or request features. Contributions will be reviewed via pull requests.

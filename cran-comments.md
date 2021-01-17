@@ -12,7 +12,8 @@
 There was 1 NOTE in the r-hub checks:
 
 > Possibly mis-spelled words in DESCRIPTION:
-  initialisms (3:32, 7:49)
+  Initialisms (3:32)
+  initialisms (7:49)
 
 "Initialisms" is the correct pluralization of the word "initialism".
 

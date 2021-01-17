@@ -3,9 +3,9 @@
 
 # acroname
 
-<!-- badges: start -->
-
-<!-- badges: end -->
+[![CRAN
+Status](https://www.r-pkg.org/badges/version/acroname)](https://cran.r-project.org/package=acroname)
+![](https://cranlogs.r-pkg.org/badges/acroname)
 
 ## Installation
 
@@ -135,49 +135,49 @@ names from the dplyr package, prepared with a little help from the
 ## see mince() in action
 mince(starwars$name)
 #> $words
-#>   [1] "Luke"         "Skywalker"    "C-3PO"        "R2-D2"        "Darth"       
-#>   [6] "Vader"        "Leia"         "Organa"       "Owen"         "Lars"        
-#>  [11] "Beru"         "Whitesun"     "lars"         "R5-D4"        "Biggs"       
-#>  [16] "Darklighter"  "Obi-Wan"      "Kenobi"       "Anakin"       "Skywalker"   
-#>  [21] "Wilhuff"      "Tarkin"       "Chewbacca"    "Han"          "Solo"        
-#>  [26] "Greedo"       "Jabba"        "Desilijic"    "Tiure"        "Wedge"       
-#>  [31] "Antilles"     "Jek"          "Tono"         "Porkins"      "Yoda"        
-#>  [36] "Palpatine"    "Boba"         "Fett"         "IG-88"        "Bossk"       
-#>  [41] "Lando"        "Calrissian"   "Lobot"        "Ackbar"       "Mon"         
-#>  [46] "Mothma"       "Arvel"        "Crynyd"       "Wicket"       "Systri"      
-#>  [51] "Warrick"      "Nien"         "Nunb"         "Qui-Gon"      "Jinn"        
-#>  [56] "Nute"         "Gunray"       "Finis"        "Valorum"      "Jar"         
-#>  [61] "Jar"          "Binks"        "Roos"         "Tarpals"      "Rugor"       
-#>  [66] "Nass"         "Ric"          "Olié"         "Watto"        "Sebulba"     
-#>  [71] "Quarsh"       "Panaka"       "Shmi"         "Skywalker"    "Darth"       
-#>  [76] "Maul"         "Bib"          "Fortuna"      "Ayla"         "Secura"      
-#>  [81] "Dud"          "Bolt"         "Gasgano"      "Ben"          "Quadinaros"  
-#>  [86] "Mace"         "Windu"        "Ki-Adi-Mundi" "Kit"          "Fisto"       
-#>  [91] "Eeth"         "Koth"         "Adi"          "Gallia"       "Saesee"      
-#>  [96] "Tiin"         "Yarael"       "Poof"         "Plo"          "Koon"        
-#> [101] "Mas"          "Amedda"       "Gregar"       "Typho"        "Cordé"       
-#> [106] "Cliegg"       "Lars"         "Poggle"       "Lesser"       "Luminara"    
-#> [111] "Unduli"       "Barriss"      "Offee"        "Dormé"        "Dooku"       
-#> [116] "Bail"         "Prestor"      "Organa"       "Jango"        "Fett"        
-#> [121] "Zam"          "Wesell"       "Dexter"       "Jettster"     "Lama"        
-#> [126] "Su"           "Taun"         "We"           "Jocasta"      "Nu"          
-#> [131] "Ratts"        "Tyerell"      "R4-P17"       "Wat"          "Tambor"      
-#> [136] "San"          "Hill"         "Shaak"        "Ti"           "Grievous"    
-#> [141] "Tarfful"      "Raymus"       "Antilles"     "Sly"          "Moore"       
-#> [146] "Tion"         "Medon"        "Finn"         "Rey"          "Poe"         
-#> [151] "Dameron"      "BB8"          "Captain"      "Phasma"       "Padmé"       
-#> [156] "Amidala"     
+#>   [1] "Luke"        "Skywalker"   "C3PO"        "R2D2"        "Darth"      
+#>   [6] "Vader"       "Leia"        "Organa"      "Owen"        "Lars"       
+#>  [11] "Beru"        "Whitesun"    "lars"        "R5D4"        "Biggs"      
+#>  [16] "Darklighter" "ObiWan"      "Kenobi"      "Anakin"      "Skywalker"  
+#>  [21] "Wilhuff"     "Tarkin"      "Chewbacca"   "Han"         "Solo"       
+#>  [26] "Greedo"      "Jabba"       "Desilijic"   "Tiure"       "Wedge"      
+#>  [31] "Antilles"    "Jek"         "Tono"        "Porkins"     "Yoda"       
+#>  [36] "Palpatine"   "Boba"        "Fett"        "IG88"        "Bossk"      
+#>  [41] "Lando"       "Calrissian"  "Lobot"       "Ackbar"      "Mon"        
+#>  [46] "Mothma"      "Arvel"       "Crynyd"      "Wicket"      "Systri"     
+#>  [51] "Warrick"     "Nien"        "Nunb"        "QuiGon"      "Jinn"       
+#>  [56] "Nute"        "Gunray"      "Finis"       "Valorum"     "Jar"        
+#>  [61] "Jar"         "Binks"       "Roos"        "Tarpals"     "Rugor"      
+#>  [66] "Nass"        "Ric"         "Olié"        "Watto"       "Sebulba"    
+#>  [71] "Quarsh"      "Panaka"      "Shmi"        "Skywalker"   "Darth"      
+#>  [76] "Maul"        "Bib"         "Fortuna"     "Ayla"        "Secura"     
+#>  [81] "Dud"         "Bolt"        "Gasgano"     "Ben"         "Quadinaros" 
+#>  [86] "Mace"        "Windu"       "KiAdiMundi"  "Kit"         "Fisto"      
+#>  [91] "Eeth"        "Koth"        "Adi"         "Gallia"      "Saesee"     
+#>  [96] "Tiin"        "Yarael"      "Poof"        "Plo"         "Koon"       
+#> [101] "Mas"         "Amedda"      "Gregar"      "Typho"       "Cordé"      
+#> [106] "Cliegg"      "Lars"        "Poggle"      "Lesser"      "Luminara"   
+#> [111] "Unduli"      "Barriss"     "Offee"       "Dormé"       "Dooku"      
+#> [116] "Bail"        "Prestor"     "Organa"      "Jango"       "Fett"       
+#> [121] "Zam"         "Wesell"      "Dexter"      "Jettster"    "Lama"       
+#> [126] "Su"          "Taun"        "We"          "Jocasta"     "Nu"         
+#> [131] "Ratts"       "Tyerell"     "R4P17"       "Wat"         "Tambor"     
+#> [136] "San"         "Hill"        "Shaak"       "Ti"          "Grievous"   
+#> [141] "Tarfful"     "Raymus"      "Antilles"    "Sly"         "Moore"      
+#> [146] "Tion"        "Medon"       "Finn"        "Rey"         "Poe"        
+#> [151] "Dameron"     "BB8"         "Captain"     "Phasma"      "Padmé"      
+#> [156] "Amidala"    
 #> 
 #> $collapsed
-#> [1] "LukeSkywalkerC-3POR2-D2DarthVaderLeiaOrganaOwenLarsBeruWhitesunlarsR5-D4BiggsDarklighterObi-WanKenobiAnakinSkywalkerWilhuffTarkinChewbaccaHanSoloGreedoJabbaDesilijicTiureWedgeAntillesJekTonoPorkinsYodaPalpatineBobaFettIG-88BosskLandoCalrissianLobotAckbarMonMothmaArvelCrynydWicketSystriWarrickNienNunbQui-GonJinnNuteGunrayFinisValorumJarJarBinksRoosTarpalsRugorNassRicOliéWattoSebulbaQuarshPanakaShmiSkywalkerDarthMaulBibFortunaAylaSecuraDudBoltGasganoBenQuadinarosMaceWinduKi-Adi-MundiKitFistoEethKothAdiGalliaSaeseeTiinYaraelPoofPloKoonMasAmeddaGregarTyphoCordéClieggLarsPoggleLesserLuminaraUnduliBarrissOffeeDorméDookuBailPrestorOrganaJangoFettZamWesellDexterJettsterLamaSuTaunWeJocastaNuRattsTyerellR4-P17WatTamborSanHillShaakTiGrievousTarffulRaymusAntillesSlyMooreTionMedonFinnReyPoeDameronBB8CaptainPhasmaPadméAmidala"
+#> [1] "LukeSkywalkerC3POR2D2DarthVaderLeiaOrganaOwenLarsBeruWhitesunlarsR5D4BiggsDarklighterObiWanKenobiAnakinSkywalkerWilhuffTarkinChewbaccaHanSoloGreedoJabbaDesilijicTiureWedgeAntillesJekTonoPorkinsYodaPalpatineBobaFettIG88BosskLandoCalrissianLobotAckbarMonMothmaArvelCrynydWicketSystriWarrickNienNunbQuiGonJinnNuteGunrayFinisValorumJarJarBinksRoosTarpalsRugorNassRicOliéWattoSebulbaQuarshPanakaShmiSkywalkerDarthMaulBibFortunaAylaSecuraDudBoltGasganoBenQuadinarosMaceWinduKiAdiMundiKitFistoEethKothAdiGalliaSaeseeTiinYaraelPoofPloKoonMasAmeddaGregarTyphoCordéClieggLarsPoggleLesserLuminaraUnduliBarrissOffeeDorméDookuBailPrestorOrganaJangoFettZamWesellDexterJettsterLamaSuTaunWeJocastaNuRattsTyerellR4P17WatTamborSanHillShaakTiGrievousTarffulRaymusAntillesSlyMooreTionMedonFinnReyPoeDameronBB8CaptainPhasmaPadméAmidala"
 #> 
 #> $words_len
-#>   [1]  4  9  5  5  5  5  4  6  4  4  4  8  4  5  5 11  7  6  6  9  7  6  9  3  4
-#>  [26]  6  5  9  5  5  8  3  4  7  4  9  4  4  5  5  5 10  5  6  3  6  5  6  6  6
-#>  [51]  7  4  4  7  4  4  6  5  7  3  3  5  4  7  5  4  3  4  5  7  6  6  4  9  5
-#>  [76]  4  3  7  4  6  3  4  7  3 10  4  5 12  3  5  4  4  3  6  6  4  6  4  3  4
+#>   [1]  4  9  4  4  5  5  4  6  4  4  4  8  4  4  5 11  6  6  6  9  7  6  9  3  4
+#>  [26]  6  5  9  5  5  8  3  4  7  4  9  4  4  4  5  5 10  5  6  3  6  5  6  6  6
+#>  [51]  7  4  4  6  4  4  6  5  7  3  3  5  4  7  5  4  3  4  5  7  6  6  4  9  5
+#>  [76]  4  3  7  4  6  3  4  7  3 10  4  5 10  3  5  4  4  3  6  6  4  6  4  3  4
 #> [101]  3  6  6  5  5  6  4  6  6  8  6  7  5  5  5  4  7  6  5  4  3  6  6  8  4
-#> [126]  2  4  2  7  2  5  7  6  3  6  3  4  5  2  8  7  6  8  3  5  4  5  4  3  3
+#> [126]  2  4  2  7  2  5  7  5  3  6  3  4  5  2  8  7  6  8  3  5  4  5  4  3  3
 #> [151]  7  3  7  6  5  7
 #> 
 #> $first_chars
@@ -215,3 +215,8 @@ acronym("latest and greatest data analysis package", dictionary = sw_names, acro
 ## Related
 
   - <https://github.com/bacook17/acronym>
+
+## Contributing
+
+Please use GitHub issues to report bugs or request features.
+Contributions will be reviewed via pull requests.
